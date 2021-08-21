@@ -23,4 +23,20 @@ class MainCoordinator: NSObject, Coordinator {
         vc.coordinator = self
         nav.pushViewController(vc, animated: false)
     }
+    
+    // 추가 화면 전환
+    func pushToLeftVC(string: String) {
+        let vc = LeftViewController.instantiate()
+        vc.coordinator = self
+        vc.string = string
+        // push 되는 애니메이션 여부 true 설정
+        nav.pushViewController(vc, animated: true)
+    }
+    
+    func pushToRightVC() {
+        let vc = RightViewController.instantiate()
+        vc.coordinator = self
+        // push 되는 애니메이션 여부 true 설정
+        nav.pushViewController(vc, animated: true)
+    }
 }

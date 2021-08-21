@@ -15,5 +15,12 @@ class ViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func pushToLeftVC(_ sender: Any) {
+        self.coordinator?.pushToLeftVC(string: "left")
+    }
+    @IBAction func pushToRightVC(_ sender: Any) {
+        self.coordinator?.pushToRightVC()
+    }
 }
 

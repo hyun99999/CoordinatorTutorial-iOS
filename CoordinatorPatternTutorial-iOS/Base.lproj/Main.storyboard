@@ -17,23 +17,95 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="main" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MWg-ib-503">
-                                <rect key="frame" x="188.5" y="437.5" width="37" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="155.5" y="418" width="103.5" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeO-KS-XpH">
+                                <rect key="frame" x="319" y="433" width="56" height="30"/>
+                                <state key="normal" title="RightVC"/>
+                                <connections>
+                                    <action selector="pushToRightVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gBD-EU-iG5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlk-z0-51a">
+                                <rect key="frame" x="48.5" y="433" width="47" height="30"/>
+                                <state key="normal" title="LeftVC"/>
+                                <connections>
+                                    <action selector="pushToLeftVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VTq-vI-shZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="AeO-KS-XpH" firstAttribute="leading" secondItem="MWg-ib-503" secondAttribute="trailing" constant="60" id="F6P-ys-lGf"/>
                             <constraint firstItem="MWg-ib-503" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OAQ-ZT-XXw"/>
+                            <constraint firstItem="jlk-z0-51a" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QZr-zE-0wZ"/>
+                            <constraint firstItem="MWg-ib-503" firstAttribute="leading" secondItem="jlk-z0-51a" secondAttribute="trailing" constant="60" id="sJG-Gf-a3w"/>
+                            <constraint firstItem="AeO-KS-XpH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uKF-Vv-HyN"/>
                             <constraint firstItem="MWg-ib-503" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="whQ-CT-BD9"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32" y="56"/>
+            <point key="canvasLocation" x="155" y="33"/>
+        </scene>
+        <!--Left View Controller-->
+        <scene sceneID="RfB-rW-ch2">
+            <objects>
+                <viewController storyboardIdentifier="LeftViewController" id="Xru-Gb-vUL" customClass="LeftViewController" customModule="CoordinatorPatternTutorial_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xes-DA-FVz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5y-5P-daf">
+                                <rect key="frame" x="173.5" y="418" width="67.5" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wut-Ji-hRP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="F5y-5P-daf" firstAttribute="centerX" secondItem="Xes-DA-FVz" secondAttribute="centerX" id="NOv-N5-WyW"/>
+                            <constraint firstItem="F5y-5P-daf" firstAttribute="centerY" secondItem="Xes-DA-FVz" secondAttribute="centerY" id="WaZ-XA-WgX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zd0-KM-izu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="956" y="34"/>
+        </scene>
+        <!--Right View Controller-->
+        <scene sceneID="hSx-9V-D0A">
+            <objects>
+                <viewController storyboardIdentifier="RightViewController" id="qBZ-HO-zx9" customClass="RightViewController" customModule="CoordinatorPatternTutorial_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZjD-F2-1fI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="right" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2y-Bi-9Tv">
+                                <rect key="frame" x="158.5" y="418" width="97" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="veC-IA-gbb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="j2y-Bi-9Tv" firstAttribute="centerX" secondItem="ZjD-F2-1fI" secondAttribute="centerX" id="5UC-7m-LrL"/>
+                            <constraint firstItem="j2y-Bi-9Tv" firstAttribute="centerY" secondItem="ZjD-F2-1fI" secondAttribute="centerY" id="6Q3-Fu-vCc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5o7-NG-PPl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1711.5942028985507" y="32.8125"/>
         </scene>
     </scenes>
     <resources>
