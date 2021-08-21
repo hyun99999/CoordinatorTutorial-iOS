@@ -122,7 +122,6 @@ class ViewController: UIViewController, Storyboarded {
     }
 }
 ```
-
 - AppDelegate.swift
 
 SeneDelegate.swift 를 삭제한 후 첫 화면을 실행하기 위한 코드
@@ -147,6 +146,97 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         return true
+    }
+}
+```
+
+✅ [makeKeyAndVisible]([https://developer.apple.com/documentation/uikit/uiwindow/1621601-makekeyandvisible](https://developer.apple.com/documentation/uikit/uiwindow/1621601-makekeyandvisible))
+
+- window 보여주기 및 keyWindow 설정 메서드.
+- keyWindow: 키보드 및 터치 이벤트가 아닌 이벤트도 받을 수 있도록 등록
+- window의 rootViewController를 위에서 세팅해주고 makeKeyAndVisible() 부르면 마침내 지정한 rootViewController가 상호작용을 받는 현재 화면으로 세팅 완료
+
+**참고 :** 
+
+[[iOS - swift] UIWindow, makeKeyAndVisible()](https://ios-development.tistory.com/314)
+
+## 👊 화면 전환을 해보자
+
+- Main.storyboard
+
+<img width="600" alt="스크린샷 2021-08-21 오후 9 49 26" src="https://user-images.githubusercontent.com/69136340/130322687-32c10f10-df7d-46de-945b-2c1c24e0ebc7.png">
+
+추가로 LeftViewController 와 RightViewController 를 만들어주고 ViewController 와 동일하게 `weak var coordinator: MainCoordinator?` 추가하고 `Storyboarded` 프로토콜을 채택해준다.
+
+- MainCoordinator.swift
+
+```swift
+class MainCoordinator: NSObject, Coordinator {
+    
+    // ...
+    
+    // ✅ 추가 화면 전환
+    func pushToLeftVC() {
+        let vc = LeftViewController.instantiate()
+        vc.coordinator = self
+        // ✅ push 되는 애니메이션 여부 true 설정
+        nav.pushViewController(vc, animated: true)
+    }
+    
+    func pushToRightVC() {
+        let vc = RightViewController.instantiate()
+        vc.coordinator = self
+        nav.pushViewController(vc, animated: true)
+    }
+}
+```
+
+## 👊 데이터 전달
+
+그렇다면 coordinator 패턴에서는 어떻게 화면전환 시 데이터를 전달해줄까?
+
+비슷하다. MainCoordinator 의 화면전환 함수에 파라미터를 만들어준다. 그 후 뷰컨트롤러에서 호출할 때 파라미터를 전달받아서 화면전환할 뷰컨트롤러의 인스턴스에 넣어주면 된다.
+
+- MainCoordinator.swift
+
+```swift
+class MainCoordinator: NSObject, Coordinator {
+
+// ...
+
+    func pushToLeftVC(string: String) {
+        let vc = LeftViewController.instantiate()
+        vc.coordinator = self
+
+        // ✅ 데이터 전달
+        vc.string = string
+        nav.pushViewController(vc, animated: true)
+    }
+
+// ...
+
+}
+```
+
+- LeftViewController.swift
+
+```swift
+import UIKit
+
+class LeftViewController: UIViewController, Storyboarded {
+
+    // ✅ 데이터를 받을 옵셔널 변수
+    var string: String?
+
+    weak var coordinator: MainCoordinator?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // ✅ 전달된 데이터 확인
+        if let string = string {
+            print(string)
+        }
     }
 }
 ```
