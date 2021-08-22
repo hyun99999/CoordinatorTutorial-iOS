@@ -1,9 +1,15 @@
 # CoordinatorTutorial-iOS
 👊 Coordinator 패턴의 유쾌한 반란
 
+**목차**
+
 - [Basic](#basic)
+
+
 : Coordinator pattern 을 프로젝트에 적용해보고 데이터 전달해보자.
 - [Advanced](#advanced)
+
+
 : parent, child coordinator 관계를 형성해보자.
 
 # Basic
