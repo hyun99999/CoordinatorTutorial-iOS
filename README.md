@@ -67,7 +67,7 @@ Coordinator 프로토콜을 채택해서 화면전환을 설정
 import Foundation
 import UIKit
 
-class MainCoordinator: NSObject, Coordinator {
+class MainCoordinator: Coordinator {
     
     var childCoordinators = [Coordinator]()
     var nav: UINavigationController
@@ -184,7 +184,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 - MainCoordinator.swift
 
 ```swift
-class MainCoordinator: NSObject, Coordinator {
+class MainCoordinator: Coordinator {
     
     // ...
     
@@ -305,17 +305,12 @@ class LeftCoordinator: Coordinator {
 import UIKit
 
 class LeftViewController: UIViewController, Storyboarded {
-    var string: String?
 
     // ✅ LeftViewController 에서는 LeftCoordinator 를 사용할 것이기 때문에 coordinator 변수타입을 LeftCoordinator 로 변경 
     weak var coordinator: LeftCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let string = string {
-            print(string)
-        }
     }
 }
 ```
@@ -375,7 +370,7 @@ class ViewController: UIViewController, Storyboarded {
 
 ## 👊 Child Coordinator 의 일이 끝났을 때
 
-LeftViewController 에서 MainViewController 로 pop 할때 어떻게 해야할까?
+LeftViewController 에서 MainViewController 로 pop 할때 어떻게 해야할까?(pop 동작자체는 navigationbar 의 back button 이 해준다.)
 
 parent coordinator 에게 알리고 child coordinator 를 지워야한다.
 
