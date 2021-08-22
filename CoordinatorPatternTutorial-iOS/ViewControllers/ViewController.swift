@@ -17,7 +17,8 @@ class ViewController: UIViewController, Storyboarded {
     }
     
     @IBAction func pushToLeftVC(_ sender: Any) {
-        self.coordinator?.pushToLeftVC(string: "left")
+//        self.coordinator?.pushToLeftVC(string: "left")
+        self.coordinator?.leftSubscriptions()
     }
     @IBAction func pushToRightVC(_ sender: Any) {
         self.coordinator?.pushToRightVC()

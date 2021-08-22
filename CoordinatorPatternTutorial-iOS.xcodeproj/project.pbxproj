@@ -17,6 +17,7 @@
 		F88424D426D11B0600F17916 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88424D326D11B0600F17916 /* Storyboarded.swift */; };
 		F88424D726D12A0C00F17916 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88424D626D12A0C00F17916 /* LeftViewController.swift */; };
 		F88424D926D12A1900F17916 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88424D826D12A1900F17916 /* RightViewController.swift */; };
+		F88424DB26D23C6F00F17916 /* LeftCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88424DA26D23C6F00F17916 /* LeftCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F88424D326D11B0600F17916 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		F88424D626D12A0C00F17916 /* LeftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftViewController.swift; sourceTree = "<group>"; };
 		F88424D826D12A1900F17916 /* RightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightViewController.swift; sourceTree = "<group>"; };
+		F88424DA26D23C6F00F17916 /* LeftCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +81,9 @@
 		F88424D126D1111000F17916 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				F88424CF26D10F5A00F17916 /* MainCoordinator.swift */,
 				F88424CC26D10EDE00F17916 /* Coordinator.swift */,
+				F88424CF26D10F5A00F17916 /* MainCoordinator.swift */,
+				F88424DA26D23C6F00F17916 /* LeftCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F88424BD26D0FAC700F17916 /* ViewController.swift in Sources */,
+				F88424DB26D23C6F00F17916 /* LeftCoordinator.swift in Sources */,
 				F88424D926D12A1900F17916 /* RightViewController.swift in Sources */,
 				F88424D426D11B0600F17916 /* Storyboarded.swift in Sources */,
 				F88424D026D10F5A00F17916 /* MainCoordinator.swift in Sources */,

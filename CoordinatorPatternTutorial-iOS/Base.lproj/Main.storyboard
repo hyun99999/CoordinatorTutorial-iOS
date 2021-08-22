@@ -67,11 +67,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peW-97-FMp">
+                                <rect key="frame" x="60" y="433" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="popToMain:" destination="Xru-Gb-vUL" eventType="touchUpInside" id="e8k-xC-cD7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wut-Ji-hRP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="F5y-5P-daf" firstAttribute="centerX" secondItem="Xes-DA-FVz" secondAttribute="centerX" id="NOv-N5-WyW"/>
+                            <constraint firstItem="peW-97-FMp" firstAttribute="centerY" secondItem="Xes-DA-FVz" secondAttribute="centerY" id="OYp-PS-fwL"/>
+                            <constraint firstItem="peW-97-FMp" firstAttribute="leading" secondItem="wut-Ji-hRP" secondAttribute="leading" constant="60" id="Q53-AA-AGS"/>
                             <constraint firstItem="F5y-5P-daf" firstAttribute="centerY" secondItem="Xes-DA-FVz" secondAttribute="centerY" id="WaZ-XA-WgX"/>
                         </constraints>
                     </view>
